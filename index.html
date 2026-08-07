@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#08080b" />
+  <meta name="robots" content="index,follow" />
+  <meta name="description" content="A 60-second fee-friction scan for everyday banking and travel spending. See your estimate, then decide whether Revolut fits your habits." />
+  <link rel="canonical" href="/" />
+  <link rel="alternate" hreflang="en-GB" href="/?lang=en" />
+  <link rel="alternate" hreflang="de-DE" href="/?lang=de" />
+  <link rel="alternate" hreflang="fr-FR" href="/?lang=fr" />
+  <link rel="alternate" hreflang="es-ES" href="/?lang=es" />
+  <link rel="alternate" hreflang="x-default" href="/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Money Friction Scan" />
+  <meta property="og:description" content="Find the fees hiding in your habits — in about 60 seconds." />
+  <title>Money Friction Scan</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain"></div>
+  <header class="nav shell">
+    <a class="brand" href="#" aria-label="Money Friction Scan home">
+      <span class="brand-mark">↗</span><span>Money Friction Scan</span>
+    </a>
+    <div class="nav-actions">
+      <span class="verified-pill" id="verifiedPill">Evidence-backed</span>
+      <select id="langSelect" aria-label="Language">
+        <option value="en">EN</option><option value="de">DE</option>
+        <option value="fr">FR</option><option value="es">ES</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <div class="hero-copy">
+        <div class="eyebrow" id="eyebrow"></div>
+        <h1 id="headline"></h1>
+        <p class="hero-sub" id="subhead"></p>
+        <div class="hero-actions">
+          <button class="primary" data-scroll="scanner" id="heroCta"></button>
+          <span class="micro" id="heroMicro"></span>
+        </div>
+        <div class="trust-row">
+          <div><strong id="proofA"></strong><span id="proofALabel"></span></div>
+          <div><strong id="proofB"></strong><span id="proofBLabel"></span></div>
+          <div><strong id="proofC"></strong><span id="proofCLabel"></span></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="orb">
+          <div class="orb-inner">
+            <span id="orbLabel"></span>
+            <strong id="orbValue">60s</strong>
+            <small id="orbSmall"></small>
+          </div>
+        </div>
+        <div class="signal-list" id="signalList"></div>
+      </div>
+    </section>
+
+    <section class="country-angle shell">
+      <div class="section-kicker" id="localKicker"></div>
+      <div class="angle-grid">
+        <article class="angle-main">
+          <h2 id="localTitle"></h2>
+          <p id="localBody"></p>
+        </article>
+        <article class="fact-card">
+          <span id="localFactLabel"></span>
+          <strong id="localFact"></strong>
+          <p id="localFactNote"></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="scanner shell" id="scanner">
+      <div class="scanner-head">
+        <span class="step-chip">01</span>
+        <div><div class="section-kicker" id="step1Kicker"></div><h2 id="step1Title"></h2></div>
+      </div>
+
+      <div class="inputs-grid">
+        <label class="input-card">
+          <span id="spendLabel"></span>
+          <div class="money-input"><b id="currencySymbol">£</b><input id="foreignSpend" type="number" min="0" step="10" value="500"></div>
+          <small id="spendHint"></small>
+        </label>
+        <label class="input-card">
+          <span id="markupLabel"></span>
+          <div class="money-input"><input id="bankMarkup" type="number" min="0" max="10" step=".1" value="2.5"><b>%</b></div>
+          <small id="markupHint"></small>
+        </label>
+        <label class="input-card">
+          <span id="atmLabel"></span>
+          <div class="money-input"><input id="atmFees" type="number" min="0" step="1" value="4"><b id="currencySuffix">£</b></div>
+          <small id="atmHint"></small>
+        </label>
+        <label class="input-card">
+          <span id="transferLabel"></span>
+          <div class="money-input"><input id="transferFees" type="number" min="0" step="1" value="3"><b id="currencySuffix2">£</b></div>
+          <small id="transferHint"></small>
+        </label>
+      </div>
+      <button class="primary wide" id="calculateBtn"></button>
+    </section>
+
+    <section class="result shell" id="result" aria-live="polite">
+      <div class="scanner-head">
+        <span class="step-chip">02</span>
+        <div><div class="section-kicker" id="step2Kicker"></div><h2 id="step2Title"></h2></div>
+      </div>
+      <div class="result-grid">
+        <article class="result-main">
+          <span id="annualLabel"></span>
+          <strong id="annualValue">—</strong>
+          <p id="annualExplain"></p>
+          <div class="meter"><div id="meterFill"></div></div>
+          <div class="score-row"><span id="scoreLabel"></span><b id="scoreValue"></b></div>
+        </article>
+        <article class="breakdown">
+          <div><span id="fxBreakLabel"></span><b id="fxBreak">—</b></div>
+          <div><span id="atmBreakLabel"></span><b id="atmBreak">—</b></div>
+          <div><span id="transferBreakLabel"></span><b id="transferBreak">—</b></div>
+          <div class="possible"><span id="possibleLabel"></span><b id="possibleValue">—</b></div>
+        </article>
+      </div>
+      <div class="evidence-box">
+        <div class="evidence-icon">✓</div>
+        <div><strong id="evidenceTitle"></strong><p id="evidenceText"></p></div>
+      </div>
+    </section>
+
+    <section class="decision shell">
+      <div class="scanner-head">
+        <span class="step-chip">03</span>
+        <div><div class="section-kicker" id="step3Kicker"></div><h2 id="step3Title"></h2></div>
+      </div>
+      <div class="decision-card">
+        <div>
+          <span class="fit-label" id="fitLabel"></span>
+          <h3 id="fitTitle"></h3>
+          <p id="fitText"></p>
+        </div>
+        <div class="cta-stack">
+          <a class="primary link" id="referralCta" href="https://revolut.com/referral/?referral-code=vassils84e!AUG1-26-AR-LL&geo-redirect" rel="nofollow sponsored noopener" target="_blank"></a>
+          <button class="secondary" id="shareBtn"></button>
+          <small id="disclosure"></small>
+        </div>
+      </div>
+      <div class="share-toast" id="toast" role="status"></div>
+    </section>
+
+    <section class="proof shell">
+      <div class="section-kicker" id="proofKicker"></div>
+      <h2 id="proofTitle"></h2>
+      <div class="proof-grid" id="proofGrid"></div>
+    </section>
+
+    <section class="faq shell">
+      <div class="section-kicker">FAQ</div>
+      <div id="faqList"></div>
+    </section>
+  </main>
+
+  <footer class="shell footer">
+    <p id="footerDisclosure"></p>
+    <div class="footer-links">
+      <a href="https://www.revolut.com/legal/standard-fees/" target="_blank" rel="noopener" id="feesLink"></a>
+      <a href="https://help.revolut.com/" target="_blank" rel="noopener" id="helpLink"></a>
+    </div>
+    <small>Independent referral microsite · <span id="updatedAt">Evidence checked Aug 2026</span></small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
