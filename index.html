@@ -4,18 +4,37 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#08080b" />
-  <meta name="robots" content="index,follow" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="description" content="A 60-second fee-friction scan for everyday banking and travel spending. See your estimate, then decide whether Revolut fits your habits." />
-  <link rel="canonical" href="/" />
-  <link rel="alternate" hreflang="en-GB" href="/?lang=en" />
-  <link rel="alternate" hreflang="de-DE" href="/?lang=de" />
-  <link rel="alternate" hreflang="fr-FR" href="/?lang=fr" />
-  <link rel="alternate" hreflang="es-ES" href="/?lang=es" />
-  <link rel="alternate" hreflang="x-default" href="/" />
+  <link rel="canonical" href="https://revolut-money-friction-scan.vercel.app/" />
+  <link rel="alternate" hreflang="en-GB" href="https://revolut-money-friction-scan.vercel.app/?lang=en" />
+  <link rel="alternate" hreflang="de-DE" href="https://revolut-money-friction-scan.vercel.app/?lang=de" />
+  <link rel="alternate" hreflang="fr-FR" href="https://revolut-money-friction-scan.vercel.app/?lang=fr" />
+  <link rel="alternate" hreflang="es-ES" href="https://revolut-money-friction-scan.vercel.app/?lang=es" />
+  <link rel="alternate" hreflang="x-default" href="https://revolut-money-friction-scan.vercel.app/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Money Friction Scan" />
   <meta property="og:description" content="Find the fees hiding in your habits — in about 60 seconds." />
-  <title>Money Friction Scan</title>
+  <meta property="og:url" content="https://revolut-money-friction-scan.vercel.app/" />
+  <meta property="og:site_name" content="Money Friction Scan" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Free Bank Fee Calculator | Money Friction Scan" />
+  <meta name="twitter:description" content="Estimate annual FX, ATM and transfer fee friction from your own spending habits." />
+  <title>Free Bank Fee Calculator | Money Friction Scan</title>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {"@type":"WebSite","@id":"https://revolut-money-friction-scan.vercel.app/#website","url":"https://revolut-money-friction-scan.vercel.app/","name":"Money Friction Scan","inLanguage":["en-GB","de-DE","fr-FR","es-ES"]},
+      {"@type":"WebApplication","@id":"https://revolut-money-friction-scan.vercel.app/#app","name":"Money Friction Scan","url":"https://revolut-money-friction-scan.vercel.app/","applicationCategory":"FinanceApplication","operatingSystem":"Any","isAccessibleForFree":true,"description":"A free calculator that estimates annual foreign-exchange markup, ATM and transfer fee friction from user-provided inputs.","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},
+      {"@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"Does the calculator guarantee savings?","acceptedAnswer":{"@type":"Answer","text":"No. It estimates fee friction from the values you enter. Actual costs depend on current provider pricing, limits and timing."}},
+        {"@type":"Question","name":"Is this an official Revolut website?","acceptedAnswer":{"@type":"Answer","text":"No. It is an independent educational and referral microsite."}},
+        {"@type":"Question","name":"Is the Money Friction Scan free?","acceptedAnswer":{"@type":"Answer","text":"Yes. It requires no signup or email address."}}
+      ]}
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -37,8 +56,8 @@
     <section class="hero shell">
       <div class="hero-copy">
         <div class="eyebrow" id="eyebrow"></div>
-        <h1 id="headline"></h1>
-        <p class="hero-sub" id="subhead"></p>
+        <h1 id="headline">Free bank fee calculator for travel, FX and transfers</h1>
+        <p class="hero-sub" id="subhead">Estimate your annual foreign-exchange markup, ATM fees and transfer costs in about 60 seconds—using your own numbers.</p>
         <div class="hero-actions">
           <button class="primary" data-scroll="scanner" id="heroCta"></button>
           <span class="micro" id="heroMicro"></span>
