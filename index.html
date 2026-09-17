@@ -5,37 +5,44 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#08080b" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
-  <meta name="description" content="A 60-second fee-friction scan for everyday banking and travel spending. See your estimate, then decide whether Revolut fits your habits." />
+  <meta name="description" content="Find your Money Friction Number in 60 seconds. Turn FX markups, ATM charges and transfer fees into one annual number, then compare your current setup with Revolut." />
   <link rel="canonical" href="https://revolut-money-friction-scan.vercel.app/" />
   <link rel="alternate" hreflang="en-GB" href="https://revolut-money-friction-scan.vercel.app/?lang=en" />
+  <link rel="alternate" hreflang="el-GR" href="https://revolut-money-friction-scan.vercel.app/?lang=el" />
   <link rel="alternate" hreflang="de-DE" href="https://revolut-money-friction-scan.vercel.app/?lang=de" />
   <link rel="alternate" hreflang="fr-FR" href="https://revolut-money-friction-scan.vercel.app/?lang=fr" />
   <link rel="alternate" hreflang="es-ES" href="https://revolut-money-friction-scan.vercel.app/?lang=es" />
   <link rel="alternate" hreflang="x-default" href="https://revolut-money-friction-scan.vercel.app/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Money Friction Scan" />
-  <meta property="og:description" content="Find the fees hiding in your habits — in about 60 seconds." />
+  <meta property="og:title" content="What’s Your Money Friction Number? | 60-Second Challenge" />
+  <meta property="og:description" content="Tiny bank charges can become a surprisingly large yearly number. Run the free 60-second scan, then challenge a friend." />
   <meta property="og:url" content="https://revolut-money-friction-scan.vercel.app/" />
   <meta property="og:site_name" content="Money Friction Scan" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:locale:alternate" content="el_GR" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="es_ES" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Free Bank Fee Calculator | Money Friction Scan" />
-  <meta name="twitter:description" content="Estimate annual FX, ATM and transfer fee friction from your own spending habits." />
-  <title>Free Bank Fee Calculator | Money Friction Scan</title>
+  <meta name="twitter:title" content="What’s Your Money Friction Number?" />
+  <meta name="twitter:description" content="A free 60-second challenge that turns FX, ATM and transfer fees into one annual number." />
+  <title>Money Friction Number | Free 60-Second Bank Fee Challenge</title>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@graph":[
-      {"@type":"WebSite","@id":"https://revolut-money-friction-scan.vercel.app/#website","url":"https://revolut-money-friction-scan.vercel.app/","name":"Money Friction Scan","inLanguage":["en-GB","de-DE","fr-FR","es-ES"]},
+      {"@type":"WebSite","@id":"https://revolut-money-friction-scan.vercel.app/#website","url":"https://revolut-money-friction-scan.vercel.app/","name":"Money Friction Scan","inLanguage":["en-GB","el-GR","de-DE","fr-FR","es-ES"]},
       {"@type":"WebApplication","@id":"https://revolut-money-friction-scan.vercel.app/#app","name":"Money Friction Scan","url":"https://revolut-money-friction-scan.vercel.app/","applicationCategory":"FinanceApplication","operatingSystem":"Any","isAccessibleForFree":true,"description":"A free calculator that estimates annual foreign-exchange markup, ATM and transfer fee friction from user-provided inputs.","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},
       {"@type":"FAQPage","mainEntity":[
         {"@type":"Question","name":"Does the calculator guarantee savings?","acceptedAnswer":{"@type":"Answer","text":"No. It estimates fee friction from the values you enter. Actual costs depend on current provider pricing, limits and timing."}},
-        {"@type":"Question","name":"Is this an official Revolut website?","acceptedAnswer":{"@type":"Answer","text":"No. It is an independent educational and referral microsite."}},
+        {"@type":"Question","name":"Is this an official Revolut website?","acceptedAnswer":{"@type":"Answer","text":"No. It is an independent educational comparison tool."}},
         {"@type":"Question","name":"Is the Money Friction Scan free?","acceptedAnswer":{"@type":"Answer","text":"Yes. It requires no signup or email address."}}
       ]}
     ]
   }
   </script>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="viral.css" />
 </head>
 <body>
   <div class="grain"></div>
@@ -46,7 +53,7 @@
     <div class="nav-actions">
       <span class="verified-pill" id="verifiedPill">Evidence-backed</span>
       <select id="langSelect" aria-label="Language">
-        <option value="en">EN</option><option value="de">DE</option>
+        <option value="el">EL</option><option value="en">EN</option><option value="de">DE</option>
         <option value="fr">FR</option><option value="es">ES</option>
       </select>
     </div>
@@ -55,25 +62,25 @@
   <main>
     <section class="hero shell">
       <div class="hero-copy">
-        <div class="eyebrow" id="eyebrow"></div>
-        <h1 id="headline">Free bank fee calculator for travel, FX and transfers</h1>
-        <p class="hero-sub" id="subhead">Estimate your annual foreign-exchange markup, ATM fees and transfer costs in about 60 seconds—using your own numbers.</p>
+        <div class="eyebrow" id="eyebrow">60-second personal money diagnostic</div>
+        <h1 id="headline">What’s your Money Friction Number?</h1>
+        <p class="hero-sub" id="subhead">Turn the FX markups, ATM charges and transfer fees you already pay into one annual number. Then decide whether your current setup is still worth it.</p>
         <div class="hero-actions">
-          <button class="primary" data-scroll="scanner" id="heroCta"></button>
-          <span class="micro" id="heroMicro"></span>
+          <button class="primary" data-scroll="scanner" id="heroCta">Find my number</button>
+          <span class="micro" id="heroMicro">No signup · no email · your assumptions</span>
         </div>
         <div class="trust-row">
-          <div><strong id="proofA"></strong><span id="proofALabel"></span></div>
-          <div><strong id="proofB"></strong><span id="proofBLabel"></span></div>
-          <div><strong id="proofC"></strong><span id="proofCLabel"></span></div>
+          <div><strong id="proofA">60s</strong><span id="proofALabel">personal scan</span></div>
+          <div><strong id="proofB">4</strong><span id="proofBLabel">inputs</span></div>
+          <div><strong id="proofC">1</strong><span id="proofCLabel">clear yearly number</span></div>
         </div>
       </div>
       <div class="hero-card">
         <div class="orb">
           <div class="orb-inner">
-            <span id="orbLabel"></span>
+            <span id="orbLabel">personal scan</span>
             <strong id="orbValue">60s</strong>
-            <small id="orbSmall"></small>
+            <small id="orbSmall">4 inputs · 1 decision</small>
           </div>
         </div>
         <div class="signal-list" id="signalList"></div>
@@ -81,16 +88,16 @@
     </section>
 
     <section class="country-angle shell">
-      <div class="section-kicker" id="localKicker"></div>
+      <div class="section-kicker" id="localKicker">Start with your own numbers</div>
       <div class="angle-grid">
         <article class="angle-main">
-          <h2 id="localTitle"></h2>
-          <p id="localBody"></p>
+          <h2 id="localTitle">Don’t start with another banking ad. Start with what your current habits cost.</h2>
+          <p id="localBody">The scan uses your own inputs first. That makes the comparison more useful than a generic promise about savings.</p>
         </article>
         <article class="fact-card">
-          <span id="localFactLabel"></span>
-          <strong id="localFact"></strong>
-          <p id="localFactNote"></p>
+          <span id="localFactLabel">Reference</span>
+          <strong id="localFact">Your real fees</strong>
+          <p id="localFactNote">Always verify current provider limits, fees and terms before acting.</p>
         </article>
       </div>
     </section>
@@ -98,83 +105,83 @@
     <section class="scanner shell" id="scanner">
       <div class="scanner-head">
         <span class="step-chip">01</span>
-        <div><div class="section-kicker" id="step1Kicker"></div><h2 id="step1Title"></h2></div>
+        <div><div class="section-kicker" id="step1Kicker">Your current habits</div><h2 id="step1Title">Build your fee fingerprint</h2></div>
       </div>
 
       <div class="inputs-grid">
         <label class="input-card">
-          <span id="spendLabel"></span>
+          <span id="spendLabel">Foreign-currency spend / month</span>
           <div class="money-input"><b id="currencySymbol">£</b><input id="foreignSpend" type="number" min="0" step="10" value="500"></div>
-          <small id="spendHint"></small>
+          <small id="spendHint">Travel, international shopping and subscriptions.</small>
         </label>
         <label class="input-card">
-          <span id="markupLabel"></span>
+          <span id="markupLabel">Current bank/card FX markup</span>
           <div class="money-input"><input id="bankMarkup" type="number" min="0" max="10" step=".1" value="2.5"><b>%</b></div>
-          <small id="markupHint"></small>
+          <small id="markupHint">Use the rate your provider actually charges.</small>
         </label>
         <label class="input-card">
-          <span id="atmLabel"></span>
+          <span id="atmLabel">ATM fees / month</span>
           <div class="money-input"><input id="atmFees" type="number" min="0" step="1" value="4"><b id="currencySuffix">£</b></div>
-          <small id="atmHint"></small>
+          <small id="atmHint">Only fees you really pay.</small>
         </label>
         <label class="input-card">
-          <span id="transferLabel"></span>
+          <span id="transferLabel">Transfer fees / month</span>
           <div class="money-input"><input id="transferFees" type="number" min="0" step="1" value="3"><b id="currencySuffix2">£</b></div>
-          <small id="transferHint"></small>
+          <small id="transferHint">International/cross-border fees.</small>
         </label>
       </div>
-      <button class="primary wide" id="calculateBtn"></button>
+      <button class="primary wide" id="calculateBtn">Reveal my annual friction</button>
     </section>
 
     <section class="result shell" id="result" aria-live="polite">
       <div class="scanner-head">
         <span class="step-chip">02</span>
-        <div><div class="section-kicker" id="step2Kicker"></div><h2 id="step2Title"></h2></div>
+        <div><div class="section-kicker" id="step2Kicker">Your result</div><h2 id="step2Title">Turn invisible percentages into a yearly number</h2></div>
       </div>
       <div class="result-grid">
         <article class="result-main">
-          <span id="annualLabel"></span>
+          <span id="annualLabel">Estimated annual fee friction</span>
           <strong id="annualValue">—</strong>
-          <p id="annualExplain"></p>
+          <p id="annualExplain">Not a savings promise. This annualises only the values you entered.</p>
           <div class="meter"><div id="meterFill"></div></div>
-          <div class="score-row"><span id="scoreLabel"></span><b id="scoreValue"></b></div>
+          <div class="score-row"><span id="scoreLabel">friction score</span><b id="scoreValue"></b></div>
         </article>
         <article class="breakdown">
-          <div><span id="fxBreakLabel"></span><b id="fxBreak">—</b></div>
-          <div><span id="atmBreakLabel"></span><b id="atmBreak">—</b></div>
-          <div><span id="transferBreakLabel"></span><b id="transferBreak">—</b></div>
-          <div class="possible"><span id="possibleLabel"></span><b id="possibleValue">—</b></div>
+          <div><span id="fxBreakLabel">FX markup</span><b id="fxBreak">—</b></div>
+          <div><span id="atmBreakLabel">ATM fees</span><b id="atmBreak">—</b></div>
+          <div><span id="transferBreakLabel">Transfer fees</span><b id="transferBreak">—</b></div>
+          <div class="possible"><span id="possibleLabel">Potentially addressable*</span><b id="possibleValue">—</b></div>
         </article>
       </div>
       <div class="evidence-box">
         <div class="evidence-icon">✓</div>
-        <div><strong id="evidenceTitle"></strong><p id="evidenceText"></p></div>
+        <div><strong id="evidenceTitle">Conservative by design</strong><p id="evidenceText">Current provider pricing and fair-use limits still matter. This tool does not assume every fee disappears.</p></div>
       </div>
     </section>
 
     <section class="decision shell">
       <div class="scanner-head">
         <span class="step-chip">03</span>
-        <div><div class="section-kicker" id="step3Kicker"></div><h2 id="step3Title"></h2></div>
+        <div><div class="section-kicker" id="step3Kicker">Decision, not hype</div><h2 id="step3Title">Does Revolut fit your pattern?</h2></div>
       </div>
       <div class="decision-card">
         <div>
-          <span class="fit-label" id="fitLabel"></span>
-          <h3 id="fitTitle"></h3>
-          <p id="fitText"></p>
+          <span class="fit-label" id="fitLabel">Your fit signal</span>
+          <h3 id="fitTitle">Run the scan first</h3>
+          <p id="fitText">Your own inputs determine the recommendation framing.</p>
         </div>
         <div class="cta-stack">
-          <a class="primary link" id="referralCta" href="https://revolut.com/referral/?referral-code=vassils84e!AUG1-26-AR-LL&geo-redirect" rel="nofollow sponsored noopener" target="_blank"></a>
-          <button class="secondary" id="shareBtn"></button>
-          <small id="disclosure"></small>
+          <a class="primary link" id="referralCta" href="https://www.revolut.com/en-GR/our-pricing-plans/" rel="noopener" target="_blank">Compare Revolut Standard</a>
+          <button class="secondary" id="shareBtn">Challenge a friend</button>
+          <small id="disclosure">Public comparison link. Current plans, limits and fees can change.</small>
         </div>
       </div>
       <div class="share-toast" id="toast" role="status"></div>
     </section>
 
     <section class="proof shell">
-      <div class="section-kicker" id="proofKicker"></div>
-      <h2 id="proofTitle"></h2>
+      <div class="section-kicker" id="proofKicker">Evidence, not slogans</div>
+      <h2 id="proofTitle">Strong claims should survive a click</h2>
       <div class="proof-grid" id="proofGrid"></div>
     </section>
 
@@ -185,14 +192,15 @@
   </main>
 
   <footer class="shell footer">
-    <p id="footerDisclosure"></p>
+    <p id="footerDisclosure">Independent educational comparison tool. Not Revolut and not financial advice.</p>
     <div class="footer-links">
-      <a href="https://www.revolut.com/legal/standard-fees/" target="_blank" rel="noopener" id="feesLink"></a>
-      <a href="https://help.revolut.com/" target="_blank" rel="noopener" id="helpLink"></a>
+      <a href="https://www.revolut.com/el-GR/legal/standard-fees/" target="_blank" rel="noopener" id="feesLink">Official Standard fees</a>
+      <a href="https://help.revolut.com/" target="_blank" rel="noopener" id="helpLink">Revolut Help Centre</a>
     </div>
-    <small>Independent referral microsite · <span id="updatedAt">Evidence checked Aug 2026</span></small>
+    <small>Independent comparison tool · <span id="updatedAt">Evidence checked 17 Sep 2026</span></small>
   </footer>
 
   <script src="app.js"></script>
+  <script src="viral.js"></script>
 </body>
 </html>
